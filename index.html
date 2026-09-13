@@ -119,7 +119,7 @@
   .travel-hero h1 { margin:0 0 9px; font-size:28px; }
   .travel-hero p { margin:0; opacity:.92; line-height:1.7; }
   .mini-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
     margin-top:18px;
   }
   .mini-box {
@@ -387,6 +387,52 @@
 
 .place-note a{color:#315efb;text-decoration:underline;text-underline-offset:2px;word-break:break-all;}
 
+
+/* 상단 탭 한 화면 고정형 */
+.tab-scroll{
+  width:100%;
+  max-width:900px;
+  box-sizing:border-box;
+  margin:auto;
+  display:grid !important;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:3px !important;
+  overflow:hidden !important;
+  padding:8px 5px !important;
+}
+.tab-btn{
+  min-width:0 !important;
+  width:100%;
+  padding:8px 2px !important;
+  font-size:11px !important;
+  line-height:1.1;
+  text-align:center;
+  overflow:hidden;
+  text-overflow:clip;
+  white-space:nowrap;
+}
+@media (max-width:390px){
+  .tab-btn{font-size:10px !important;padding:8px 1px !important;}
+}
+
+
+.mini-box-link{
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+}
+.mini-box-link span{
+  display:block;
+  font-size:12px;
+  opacity:.8;
+  margin-top:4px;
+}
+.mini-box-link:hover,
+.mini-box-link:active{
+  text-decoration:none;
+  filter:brightness(1.05);
+}
+
 </style>
 
 <style>
@@ -400,13 +446,13 @@
 <div class="app-shell">
   <nav class="topbar">
     <div class="tab-scroll">
-      <button class="tab-btn active" data-tab="calculator">💱 환율계산기</button>
+      <button class="tab-btn active" data-tab="calculator">환율</button>
       <button class="tab-btn" data-tab="overview">개요</button>
-      <button class="tab-btn" data-tab="day1">1일차</button>
-      <button class="tab-btn" data-tab="day2">2일차</button>
-      <button class="tab-btn" data-tab="day3">3일차</button>
-      <button class="tab-btn" data-tab="day4">4일차</button>
-      <button class="tab-btn" data-tab="places">기타(식당/여행지)</button>
+      <button class="tab-btn" data-tab="day1">1일</button>
+      <button class="tab-btn" data-tab="day2">2일</button>
+      <button class="tab-btn" data-tab="day3">3일</button>
+      <button class="tab-btn" data-tab="day4">4일</button>
+      <button class="tab-btn" data-tab="places">기타(목록)</button>
     </div>
   </nav>
 
@@ -465,6 +511,10 @@
       <div class="mini-box"><b>여행기간</b>2026.9.21(월) ~ 9.24(목)</div>
       <div class="mini-box"><b>숙소</b>KOI Resort &amp; Residence Da Nang</div>
       <div class="mini-box"><b>여행지역</b>베트남 다낭 (Danang)</div>
+      <a class="mini-box mini-box-link" href="https://maps.app.goo.gl/AcBfMPsQm3bvusaj8" target="_blank" rel="noopener noreferrer">
+        <b>다낭 체크인 장소 한 번에 보기</b>
+        <span>눌러서 지도 열기</span>
+      </a>
     </div>
   </div>
 
@@ -543,28 +593,28 @@
 <div class="schedule-item">
   <div class="time">10:10</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('koi')">KOI Resort &amp; Residence</button></div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('pb448582e3f')">KOI Resort &amp; Residence</button></div>
     <div class="schedule-desc excel-note">체크인 오후 3시 사유로 짐만 맡기고 다낭 시내 관광 <br>★중요 : 9월 24일 무로 다낭 공항 셔틀 신청 및 late check-out</div>
   </div>
 </div>
 <div class="schedule-item">
-  <div class="time">12:00</div>
-  <div>
-    <div class="schedule-title">점심</div>
-    <div class="schedule-desc excel-note">점심 식사 미정</div>
-  </div>
-</div>
-<div class="schedule-item">
-  <div class="time">13:00</div>
+  <div class="time">10:40</div>
   <div>
     <div class="schedule-title">시내 관광(콩카페 스타벅스, 한시장 등)</div>
     <div class="schedule-desc excel-note"><a href="https://maps.app.goo.gl/AcBfMPsQm3bvusaj8" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/AcBfMPsQm3bvusaj8</a>  <br>지도 참고</div>
   </div>
 </div>
 <div class="schedule-item">
+  <div class="time">12:00</div>
+  <div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p3e68a42b2b')">란조(베트남식)</button></div>
+    <div class="schedule-desc excel-note">169 Trần Phú, Hải Châu, Đà Nẵng </div>
+  </div>
+</div>
+<div class="schedule-item">
   <div class="time">14:00</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('lotte')">롯데마트 및 ATM출금</button></div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p03d190362d')">롯데마트 다낭</button></div>
     <div class="schedule-desc excel-note">먹을 것(과자, 과일, 물 등) 및 현지 마트 구경 <br>ATM무료 수수료 출금 가능(트래블로그카드 유니온)</div>
   </div>
 </div>
@@ -592,7 +642,7 @@
 <div class="schedule-item">
   <div class="time">19:00</div>
   <div>
-    <div class="schedule-title">저녁식사 <br>Tower Steak</div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p57613c7366')">Danang Tower 다낭타워 스테이크&amp;씨푸드</button></div>
     <div class="schedule-desc excel-note"><a href="https://maps.app.goo.gl/iXatNVVspwTwRSGh8" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/iXatNVVspwTwRSGh8</a></div>
   </div>
 </div>
@@ -623,21 +673,21 @@
 <div class="schedule-item">
   <div class="time">07:45</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('hoian')">호이안 셔틀버스 탑승장소로 이동 <br>알라카르트 다낭 비치(그랩택시 약 15분 소요)</button></div>
-    <div class="schedule-desc excel-note">200 Võ Nguyên Giáp, An Hải, Đà Nẵng</div>
+    <div class="schedule-title">바나힐 셔틀 버스 탑승 장소로 출발</div>
+    <div class="schedule-desc excel-note">200 Võ Nguyên Giáp, An Hải, Đà Nẵng <br>(알라카르트 다낭 비치(그랩택시 약 15분 소요)</div>
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">08:00</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('hoian')">호이안 셔틀버스 탑승장소 도착</button></div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('pe3ae94236f')">알라까르트 호텔 <br>(바나힐 셔틀 탑승지)</button></div>
     <div class="schedule-desc excel-note">알라카르트 다낭 비치. <br><a href="https://maps.app.goo.gl/HaUyJqQfLGSioLYe6" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/HaUyJqQfLGSioLYe6</a></div>
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">08:30</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('banahill')">바나힐 투어 <br> - 골든브릿지 <br> - 케이블카 <br> - 알파인 코스터 <br> - 점심(부페식)</button></div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p66801b9ec9')">바나힐 투어 <br>- 골든브릿지 <br>- 케이블카 <br>- 알파인 코스터 <br>- 점심(부페식)</button></div>
     <div class="schedule-desc excel-note"><a href="https://maps.app.goo.gl/bKd4TnJvXwS2296y7" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/bKd4TnJvXwS2296y7</a> </div>
   </div>
 </div>
@@ -658,22 +708,22 @@
 <div class="schedule-item">
   <div class="time">18:00</div>
   <div>
-    <div class="schedule-title">목식당</div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p96af62e76e')">목식당</button></div>
     <div class="schedule-desc excel-note">베트남 해산물 식당(크레이피쉬, 관자 등)</div>
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">20:00</div>
   <div>
-    <div class="schedule-title">한강 유람선 탑승</div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p80753ad34f')">한강 유람선(저녁)</button></div>
     <div class="schedule-desc excel-note">36 bach dang street </div>
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">21:00</div>
   <div>
-    <div class="schedule-title">마사지 등</div>
-    <div class="schedule-desc excel-note">##장소 미정 (후보군 아래)<br> - 고요 스파? <br> - 호텔 무료 마사지(50분)</div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p3f3706eec9')">고요스파(마사지)</button></div>
+    <div class="schedule-desc excel-note">56 Nguyễn Thái Học, Hải Châu, Đà Nẵng</div>
   </div>
 </div>
 </div>
@@ -696,29 +746,29 @@
 <div class="schedule-item">
   <div class="time">09:00</div>
   <div>
-    <div class="schedule-title">호텔 수영, 시내관광 등 휴식</div>
+    <div class="schedule-title">호텔 수영, 시내관광, 오행산 하이킹 등 휴식</div>
     
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">12:00</div>
   <div>
-    <div class="schedule-title">점심식사 미정</div>
-    <div class="schedule-desc excel-note">##</div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p1f51f14f0c')">피자포피스</button></div>
+    <div class="schedule-desc excel-note">quan, 8 Hoàng Văn Thụ, Hải Châu, Đà Nẵng 550000</div>
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">14:30</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('hoian')">이동 - 호이안 올드타운 출발</button></div>
+    <div class="schedule-title">이동 - 호이안 올드타운 출발</div>
     <div class="schedule-desc excel-note">##이동수단 아직 미정 <br> - 그랩택시? 전용 셔틀?</div>
   </div>
 </div>
 <div class="schedule-item">
   <div class="time">15:30</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('hoian')">호이안 관광</button></div>
-    <div class="schedule-desc excel-note"><a href="https://blog.naver.com/lovelove-jini/224400697685" target="_blank" rel="noopener noreferrer">https://blog.naver.com/lovelove-jini/224400697685</a></div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('pc93f08033e')">호이안 관광</button></div>
+    <div class="schedule-desc excel-note">09 Tô Hiến Thành, An Hải, Đà Nẵng</div>
   </div>
 </div>
 <div class="schedule-item">
@@ -731,8 +781,8 @@
 <div class="schedule-item">
   <div class="time">19:30</div>
   <div>
-    <div class="schedule-title"><button class="place-link" onclick="openPlace('hoian')">호이안 관광</button></div>
-    
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('pc93f08033e')">호이안 관광</button></div>
+    <div class="schedule-desc excel-note">62 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng,</div>
   </div>
 </div>
 <div class="schedule-item">
@@ -774,6 +824,13 @@
   </div>
 </div>
 <div class="schedule-item">
+  <div class="time">11:00</div>
+  <div>
+    <div class="schedule-title"><button class="place-link" onclick="openPlace('p2a22bcbeac')">포박하이</button></div>
+    <div class="schedule-desc excel-note">185 Trần Phú, Hải Châu, Đà Nẵng</div>
+  </div>
+</div>
+<div class="schedule-item">
   <div class="time">13:00</div>
   <div>
     <div class="schedule-title">late Check-out 및 <br>호텔 무료 셔틀버스 이동</div>
@@ -808,166 +865,183 @@
   
 <section id="page-places" class="page">
   <div class="section-card">
-    <span class="day-label">PLACES</span><h2>기타 · 식당 / 여행지</h2>
-    <div class="detail-toolbar">
-      <button class="filter-btn active" onclick="filterPlaces('all',this)">전체</button> <button class="filter-btn" onclick="filterPlaces('숙소',this)">🏨 숙소</button> <button class="filter-btn" onclick="filterPlaces('식당',this)">🍴 식당</button> <button class="filter-btn" onclick="filterPlaces('여행지',this)">📍 여행지</button> <button class="filter-btn" onclick="filterPlaces('쇼핑',this)">🛍 쇼핑</button> <button class="filter-btn" onclick="filterPlaces('스파마사지',this)">💆 스파마사지</button> <button class="filter-btn" onclick="filterPlaces('카페',this)">☕ 카페</button>
-    </div>
-    <div id="place-koi" class="place-card" data-type="숙소">
-      <h3>🏨 KOI Resort &amp; Residence</h3>
-      <div class="place-meta">구분: 숙소<br>주소: 11 Truong Sa St., Ngu Hanh Son Ward, Da Nang<br>예약/연락처: +84-236-3556-999</div>
-      <div class="place-note">가족 숙소</div>
-      
-    </div><div id="place-moksikdang" class="place-card" data-type="식당">
-      <h3>🍴 목식당</h3>
-      <div class="place-meta">구분: 식당<br>주소: 09 Tô Hiến Thành, An Hải, Đà Nẵng</div>
-      <div class="place-note">해산물<br>메뉴등 참고 홈페이지<a href="https://mocseafood.com/moc-da-nang" target="_blank" rel="noopener noreferrer">https://mocseafood.com/moc-da-nang</a></div>
-      <a class="fake-map" href="https://maps.app.goo.gl/9Rfp3LSEzZqtcdTa7" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-banahill" class="place-card" data-type="여행지">
-      <h3>📍 바나힐</h3>
-      <div class="place-meta">구분: 여행지<br>주소: Thôn An Sơn 호아방 현 Da Nang</div>
-      <div class="place-note">골든브릿지 · 케이블카  · 알파인카<br><a href="https://blog.naver.com/wooni_419/224407734513" target="_blank" rel="noopener noreferrer">https://blog.naver.com/wooni_419/224407734513</a></div>
-      <a class="fake-map" href="https://maps.app.goo.gl/vZZ5fYn2rBFMfcmM6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-hoian" class="place-card" data-type="여행지">
-      <h3>📍 호이안 올드타운</h3>
-      <div class="place-meta">구분: 여행지<br>주소: 62 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng,</div>
-      <div class="place-note">야경 · 산책 · 소원배<br><a href="https://blog.naver.com/lovelove-jini/224400697685" target="_blank" rel="noopener noreferrer">https://blog.naver.com/lovelove-jini/224400697685</a></div>
-      <a class="fake-map" href="https://maps.app.goo.gl/PabACApQuN3B8bw38" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-lotte" class="place-card" data-type="쇼핑">
-      <h3>🛍 롯데마트 다낭</h3>
-      <div class="place-meta">구분: 쇼핑<br>주소: 6 Nại Nam, Hòa Cường, Đà Nẵng</div>
-      <div class="place-note">선물 및 간식 구매</div>
-      <a class="fake-map" href="https://maps.app.goo.gl/JqY8Fqd8uk2jYnh58" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-pe521a87762" class="place-card" data-type="스파마사지">
-      <h3>💆 고요스파</h3>
-      <div class="place-meta">구분: 스파마사지<br>주소: 56 Nguyễn Thái Học, Hải Châu, Đà Nẵng</div>
-      
-      <a class="fake-map" href="https://maps.app.goo.gl/CiCdWde8hwX7jWCE6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p80753ad34f" class="place-card" data-type="여행지">
-      <h3>📍 한강 유람선(저녁)</h3>
-      <div class="place-meta">구분: 여행지<br>주소: 36 bach dang street </div>
-      <div class="place-note">노보텔 호텔 맞은편, 게이트에서 좌회전하여 약 100m 이동<br>저녁 7시, 8시, 9시 <br>약 3800원</div>
-      <a class="fake-map" href="https://maps.app.goo.gl/ki5JxD9PY94gdAhz5" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p57613c7366" class="place-card" data-type="식당">
-      <h3>🍴 Danang Tower 다낭타워 스테이크&amp;씨푸드</h3>
-      <div class="place-meta">구분: 식당<br>주소: 341 Đ. Trần Hưng Đạo, Phường, An Hải, Đà Nẵng <br>예약/연락처: 예약완료</div>
-      
-      <a class="fake-map" href="https://maps.app.goo.gl/zoa3mRf6377sPYEv9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p6279932293" class="place-card" data-type="식당">
-      <h3>🍴 모닝글로리 오리지널</h3>
-      <div class="place-meta">구분: 식당<br>주소: 106 Nguyễn Thái Học, Phường, Hội An, Đà Nẵng, 베트남<br>예약/연락처: 예약완료</div>
-      
-      <a class="fake-map" href="https://maps.app.goo.gl/CCuoDZgruQdrqeTF7" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p3fccfe0e82" class="place-card" data-type="식당">
-      <h3>🍴 QQ레스토랑 호이안</h3>
-      <div class="place-meta">구분: 식당<br>주소: 69 Ngô Quyền, An Hội, Hội An, Đà Nẵng, 베트남<br>예약/연락처: 모닝글로리 대안</div>
-      
-      <a class="fake-map" href="https://maps.app.goo.gl/BbjWqUy3Q4ZC5cKN6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-pe3ae94236f" class="place-card" data-type="여행지">
-      <h3>📍 알라까르트 호텔 <br>(바나힐 셔틀 탑승지)</h3>
-      <div class="place-meta">구분: 여행지<br>주소: 200 Võ Nguyên Giáp, An Hải, Đà Nẵng</div>
-      <div class="place-note">바나힐 투어 2일차 아침 8:30분 탑승 <br>미리 코이리즈트에서 출발 <br>(리조트에서 약 15분정도 걸림)</div>
-      <a class="fake-map" href="https://maps.app.goo.gl/Wz62paewsZ521Rid9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p6a36291531" class="place-card" data-type="여행지">
-      <h3>📍 바나힐 셔틀 탑승장소(후보2) <br> - 하이안 비치 호텔</h3>
-      <div class="place-meta">구분: 여행지<br>주소: 278 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng </div>
-      <div class="place-note">무료 ATM근처</div>
-      <a class="fake-map" href="https://maps.app.goo.gl/BBdUj3Tu1khaitgx9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-pbff0e6db6f" class="place-card" data-type="여행지">
-      <h3>📍 바나힐 셔틀 탑승장소(후보3)<br> - 롯데마트 입구앞</h3>
-      <div class="place-meta">구분: 여행지<br>주소: 6 Nại Nam, Hòa Cường, Đà Nẵng</div>
-      <div class="place-note">무료 ATM근처</div>
-      <a class="fake-map" href="https://maps.app.goo.gl/szuucwPTXbvoiXmg6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p83a8ad4645" class="place-card" data-type="여행지">
-      <h3>📍 바나힐 셔틀 탑승장소(후보4)<br> - 다낭시내</h3>
-      <div class="place-meta">구분: 여행지<br>주소: Đ. 2 Tháng 9, Hòa Cường, Đà Nẵng</div>
-      <div class="place-note">대관람차 근처</div>
-      <a class="fake-map" href="https://maps.app.goo.gl/S2mNK61mPL69XcDXA" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
-    </div><div id="place-p2a22bcbeac" class="place-card" data-type="식당">
-      <h3>🍴 포박하이</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">쌀국수</div>
-      
-    </div><div id="place-pd3b7c37857" class="place-card" data-type="식당">
-      <h3>🍴 포꼬</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">쌀국수</div>
-      
-    </div><div id="place-p3fb49e29db" class="place-card" data-type="식당">
-      <h3>🍴 나벱수아</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">분짜 쌀국수 </div>
-      
-    </div><div id="place-p631c3b9dbe" class="place-card" data-type="식당">
-      <h3>🍴 티엔킴</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">분짜 </div>
-      
-    </div><div id="place-p9b29cea024" class="place-card" data-type="식당">
-      <h3>🍴 세일스 반미</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">반미</div>
-      
-    </div><div id="place-p9e471b013a" class="place-card" data-type="식당">
-      <h3>🍴 송비엔</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">해산물(목식당 대체시)</div>
-      
-    </div><div id="place-pf880b604cc" class="place-card" data-type="식당">
-      <h3>🍴 여울</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">한식당</div>
-      
-    </div><div id="place-pc4c0852ec1" class="place-card" data-type="식당">
-      <h3>🍴 디 커피</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">말차 커피 등</div>
-      
-    </div><div id="place-p19f3bf69ce" class="place-card" data-type="식당">
-      <h3>🍴 반미코티엔</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">반미</div>
-      
-    </div><div id="place-pb695b55b0f" class="place-card" data-type="식당">
-      <h3>🍴 냐고비엣</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">분자 쌀국수</div>
-      
-    </div><div id="place-p1f51f14f0c" class="place-card" data-type="식당">
-      <h3>🍴 피자포피스</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">피자</div>
-      
-    </div><div id="place-p74533841d0" class="place-card" data-type="식당">
-      <h3>🍴 안토이 하이산</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">해산물</div>
-      
-    </div><div id="place-pea52cabb97" class="place-card" data-type="식당">
-      <h3>🍴 ky Vat</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">파인 다이닝?</div>
-      
-    </div><div id="place-p68dada2fd1" class="place-card" data-type="식당">
-      <h3>🍴 Pho Cu Hai Noi</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">쌀국수</div>
-      
-    </div><div id="place-p62b615d8d8" class="place-card" data-type="카페">
-      <h3>☕ 파이포커피(호이안)</h3>
-      <div class="place-meta">구분: 카페</div>
-      <div class="place-note">호이안 전망 카페</div>
-      
-    </div><div id="place-p2803f841ee" class="place-card" data-type="카페">
-      <h3>☕ 박시우 커피(호이안)</h3>
-      <div class="place-meta">구분: 카페</div>
-      <div class="place-note">호이안카페</div>
-      
-    </div><div id="place-p2931f66057" class="place-card" data-type="식당">
-      <h3>🍴 윤식당(호이안)</h3>
-      <div class="place-meta">구분: 식당</div>
-      <div class="place-note">한식당</div>
-      
-    </div>
+    <span class="day-label">PLACES</span><h2>기타 · 목록</h2>
+    <div class="detail-toolbar"><button class="filter-btn active" onclick="filterPlaces('all',this)">전체</button> <button class="filter-btn" onclick="filterPlaces('숙소',this)">🏨 숙소</button> <button class="filter-btn" onclick="filterPlaces('식당',this)">🍴 식당</button> <button class="filter-btn" onclick="filterPlaces('여행지',this)">📍 여행지</button> <button class="filter-btn" onclick="filterPlaces('쇼핑',this)">🛍️ 쇼핑</button> <button class="filter-btn" onclick="filterPlaces('스파마사지',this)">💆 스파마사지</button> <button class="filter-btn" onclick="filterPlaces('카페',this)">☕ 카페</button></div>
+    <div id="place-pb448582e3f" class="place-card" data-type="숙소">
+  <h3>🏨 KOI Resort &amp; Residence</h3>
+  <div class="place-meta">구분: 숙소<br>주소: 11 Truong Sa St., Ngu Hanh Son Ward, Da Nang<br>예약/연락처: +84-236-3556-999</div>
+  <div class="place-note">가족 숙소<br><a href="https://blog.naver.com/bombom3389/224236095019" target="_blank" rel="noopener noreferrer">https://blog.naver.com/bombom3389/224236095019</a></div>
+  <a class="fake-map" href="https://maps.app.goo.gl/FYrAJUEdxQ6ZqpUg8" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p96af62e76e" class="place-card" data-type="식당">
+  <h3>🍴 목식당</h3>
+  <div class="place-meta">구분: 식당<br>주소: 09 Tô Hiến Thành, An Hải, Đà Nẵng</div>
+  <div class="place-note">해산물<br>메뉴등 참고 홈페이지<a href="https://mocseafood.com/moc-da-nang" target="_blank" rel="noopener noreferrer">https://mocseafood.com/moc-da-nang</a></div>
+  <a class="fake-map" href="https://maps.app.goo.gl/9Rfp3LSEzZqtcdTa7" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p66801b9ec9" class="place-card" data-type="여행지">
+  <h3>📍 바나힐 투어 
+- 골든브릿지 
+- 케이블카 
+- 알파인 코스터 
+- 점심(부페식)</h3>
+  <div class="place-meta">구분: 여행지<br>주소: Thôn An Sơn 호아방 현 Da Nang</div>
+  <div class="place-note">골든브릿지 · 케이블카  · 알파인카<br><a href="https://blog.naver.com/wooni_419/224407734513" target="_blank" rel="noopener noreferrer">https://blog.naver.com/wooni_419/224407734513</a></div>
+  <a class="fake-map" href="https://maps.app.goo.gl/vZZ5fYn2rBFMfcmM6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pc93f08033e" class="place-card" data-type="여행지">
+  <h3>📍 호이안 관광</h3>
+  <div class="place-meta">구분: 여행지<br>주소: 62 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng,</div>
+  <div class="place-note">야경 · 산책 · 소원배<br><a href="https://blog.naver.com/lovelove-jini/224400697685" target="_blank" rel="noopener noreferrer">https://blog.naver.com/lovelove-jini/224400697685</a></div>
+  <a class="fake-map" href="https://maps.app.goo.gl/PabACApQuN3B8bw38" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p03d190362d" class="place-card" data-type="쇼핑">
+  <h3>🛍️ 롯데마트 다낭</h3>
+  <div class="place-meta">구분: 쇼핑<br>주소: 6 Nại Nam, Hòa Cường, Đà Nẵng</div>
+  <div class="place-note">선물 및 간식 구매</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/JqY8Fqd8uk2jYnh58" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p3f3706eec9" class="place-card" data-type="스파마사지">
+  <h3>💆 고요스파(마사지)</h3>
+  <div class="place-meta">구분: 스파마사지<br>주소: 56 Nguyễn Thái Học, Hải Châu, Đà Nẵng</div>
+  
+  <a class="fake-map" href="https://maps.app.goo.gl/CiCdWde8hwX7jWCE6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p80753ad34f" class="place-card" data-type="여행지">
+  <h3>📍 한강 유람선(저녁)</h3>
+  <div class="place-meta">구분: 여행지<br>주소: 36 bach dang street </div>
+  <div class="place-note">노보텔 호텔 맞은편, 게이트에서 좌회전하여 약 100m 이동<br>저녁 7시, 8시, 9시 <br>약 3800원</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/ki5JxD9PY94gdAhz5" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p57613c7366" class="place-card" data-type="식당">
+  <h3>🍴 Danang Tower 다낭타워 스테이크&amp;씨푸드</h3>
+  <div class="place-meta">구분: 식당<br>주소: 341 Đ. Trần Hưng Đạo, Phường, An Hải, Đà Nẵng <br>예약/연락처: 예약완료</div>
+  
+  <a class="fake-map" href="https://maps.app.goo.gl/zoa3mRf6377sPYEv9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p6279932293" class="place-card" data-type="식당">
+  <h3>🍴 모닝글로리 오리지널</h3>
+  <div class="place-meta">구분: 식당<br>주소: 106 Nguyễn Thái Học, Phường, Hội An, Đà Nẵng, 베트남<br>예약/연락처: 예약완료</div>
+  
+  <a class="fake-map" href="https://maps.app.goo.gl/CCuoDZgruQdrqeTF7" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p3fccfe0e82" class="place-card" data-type="식당">
+  <h3>🍴 QQ레스토랑 호이안</h3>
+  <div class="place-meta">구분: 식당<br>주소: 69 Ngô Quyền, An Hội, Hội An, Đà Nẵng, 베트남<br>예약/연락처: 모닝글로리 대안</div>
+  
+  <a class="fake-map" href="https://maps.app.goo.gl/BbjWqUy3Q4ZC5cKN6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pe3ae94236f" class="place-card" data-type="여행지">
+  <h3>📍 알라까르트 호텔 
+(바나힐 셔틀 탑승지)</h3>
+  <div class="place-meta">구분: 여행지<br>주소: 200 Võ Nguyên Giáp, An Hải, Đà Nẵng</div>
+  <div class="place-note">바나힐 투어 2일차 아침 8:30분 탑승 <br>미리 코이리즈트에서 출발 <br>(리조트에서 약 15분정도 걸림)</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/Wz62paewsZ521Rid9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p6a36291531" class="place-card" data-type="여행지">
+  <h3>📍 바나힐 셔틀 탑승장소(후보2) 
+ - 하이안 비치 호텔</h3>
+  <div class="place-meta">구분: 여행지<br>주소: 278 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng </div>
+  <div class="place-note">무료 ATM근처</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/BBdUj3Tu1khaitgx9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pbff0e6db6f" class="place-card" data-type="여행지">
+  <h3>📍 바나힐 셔틀 탑승장소(후보3)
+ - 롯데마트 입구앞</h3>
+  <div class="place-meta">구분: 여행지<br>주소: 6 Nại Nam, Hòa Cường, Đà Nẵng</div>
+  <div class="place-note">무료 ATM근처</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/szuucwPTXbvoiXmg6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p83a8ad4645" class="place-card" data-type="여행지">
+  <h3>📍 바나힐 셔틀 탑승장소(후보4)
+ - 다낭시내</h3>
+  <div class="place-meta">구분: 여행지<br>주소: Đ. 2 Tháng 9, Hòa Cường, Đà Nẵng</div>
+  <div class="place-note">대관람차 근처</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/S2mNK61mPL69XcDXA" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p2a22bcbeac" class="place-card" data-type="식당">
+  <h3>🍴 포박하이</h3>
+  <div class="place-meta">구분: 식당<br>주소: 185 Trần Phú, Hải Châu, Đà Nẵng</div>
+  <div class="place-note">쌀국수</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/5APo9VTQMyX9fZSLA" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pd3b7c37857" class="place-card" data-type="식당">
+  <h3>🍴 포꼬</h3>
+  <div class="place-meta">구분: 식당<br>주소: 74 Thái Phiên, Hải Châu, Đà Nẵng</div>
+  <div class="place-note">쌀국수</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/gHXJ4nNPVczfsAus9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p3fb49e29db" class="place-card" data-type="식당">
+  <h3>🍴 나벱수아</h3>
+  <div class="place-meta">구분: 식당<br>주소: 64 Hà Bổng, Sơn Trà, Đà Nẵng </div>
+  <div class="place-note">분짜 쌀국수 </div>
+  <a class="fake-map" href="https://maps.app.goo.gl/8LX1swX4B4zhrK5TA" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p631c3b9dbe" class="place-card" data-type="식당">
+  <h3>🍴 티엔킴</h3>
+  <div class="place-meta">구분: 식당<br>주소: 166 Bạch Đằng, Hải Châu, Đà Nẵng </div>
+  <div class="place-note">분짜 </div>
+  <a class="fake-map" href="https://maps.app.goo.gl/ySc9UVemwjX48RHBA" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pf7d96ec352" class="place-card" data-type="식당">
+  <h3>🍴 세일스 반미 
+Sails and skewers</h3>
+  <div class="place-meta">구분: 식당<br>주소: 286 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng</div>
+  <div class="place-note">반미<br>월요일, 화요일 휴무</div>
+  
+</div><div id="place-p9e471b013a" class="place-card" data-type="식당">
+  <h3>🍴 송비엔</h3>
+  <div class="place-meta">구분: 식당<br>주소: 260 Võ Nguyên Giáp, An Hải, Đà Nẵng</div>
+  <div class="place-note">해산물(목식당 대체시)</div>
+  <a class="fake-map" href="www.instagram.com/sailsandskewers" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pf880b604cc" class="place-card" data-type="식당">
+  <h3>🍴 여울</h3>
+  <div class="place-meta">구분: 식당<br>주소: 150 Bạch Đằng, Hải Châu, Đà Nẵng</div>
+  <div class="place-note">한식당</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/aidRRsgrft6gCniv8" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pc4c0852ec1" class="place-card" data-type="카페">
+  <h3>☕ 디 커피</h3>
+  <div class="place-meta">구분: 카페<br>주소: 60 An Thượng 29, Ngũ Hành Sơn, Đà Nẵng </div>
+  <div class="place-note">말차 커피 등</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/zVxvrpW5JcqXRjpy9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p19f3bf69ce" class="place-card" data-type="식당">
+  <h3>🍴 반미코티엔</h3>
+  <div class="place-meta">구분: 식당<br>주소: Kiệt 80/10 Trần Phú, Hải Châu, Đà Nẵng</div>
+  <div class="place-note">반미</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/Y2zNrZKu9CCSVjp8A" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pb695b55b0f" class="place-card" data-type="식당">
+  <h3>🍴 냐고비엣</h3>
+  <div class="place-meta">구분: 식당<br>주소: 49 Nguyễn Thái Học, Hải Châu, Đà Nẵng</div>
+  <div class="place-note">분자 쌀국수 반쎼오</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/JX3yQbnLShPq7Ybo9" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p1f51f14f0c" class="place-card" data-type="식당">
+  <h3>🍴 피자포피스</h3>
+  <div class="place-meta">구분: 식당<br>주소: quan, 8 Hoàng Văn Thụ, Hải Châu, Đà Nẵng 550000</div>
+  <div class="place-note">피자</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/CCwGQv93rkjsk2C5A" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p74533841d0" class="place-card" data-type="식당">
+  <h3>🍴 안토이 하이산</h3>
+  <div class="place-meta">구분: 식당<br>주소: 290 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng </div>
+  <div class="place-note">해산물</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/5FJzybkPQit2q8bp8" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-pea52cabb97" class="place-card" data-type="식당">
+  <h3>🍴 ky Vat</h3>
+  <div class="place-meta">구분: 식당<br>주소: 56a Lê Hồng Phong, Hải Châu, Đà Nẵng </div>
+  <div class="place-note">파인 다이닝?</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/3gXXH3dd1rptBmED8" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p68dada2fd1" class="place-card" data-type="식당">
+  <h3>🍴 Pho Cu Hai Noi</h3>
+  <div class="place-meta">구분: 식당</div>
+  <div class="place-note">쌀국수</div>
+  
+</div><div id="place-p62b615d8d8" class="place-card" data-type="카페">
+  <h3>☕ 파이포커피(호이안)</h3>
+  <div class="place-meta">구분: 카페<br>주소: 130 Trần Phú, Old Town, Hội An, Đà Nẵng,</div>
+  <div class="place-note">호이안 전망 카페</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/jEaxcJiLTTj3tarb6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p2931f66057" class="place-card" data-type="식당">
+  <h3>🍴 윤식당(호이안)</h3>
+  <div class="place-meta">구분: 식당<br>주소: 73 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng</div>
+  <div class="place-note">한식당</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/DRE4s6mP4BWvrxLY7" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p0c178a86b3" class="place-card" data-type="식당">
+  <h3>🍴 Pause and Enjoy Da Nang</h3>
+  <div class="place-meta">구분: 식당<br>주소: 17 Yên Bái, str, Hải Châu, Đà Nẵng</div>
+  <div class="place-note">베트남식</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/kkoBeHaNW1cnRTEk6" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p03a412b415" class="place-card" data-type="식당">
+  <h3>🍴 냐벱 한시장 베트남가정식</h3>
+  <div class="place-meta">구분: 식당<br>주소: 22 Hùng Vương, Hải Châu, Đà Nẵng </div>
+  <div class="place-note">베트남 가정식</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/zFCYHjPeBFJxzGgQ8" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div><div id="place-p3e68a42b2b" class="place-card" data-type="식당">
+  <h3>🍴 란조(베트남식)</h3>
+  <div class="place-meta">구분: 식당<br>주소: 169 Trần Phú, Hải Châu, Đà Nẵng </div>
+  <div class="place-note">베트남식</div>
+  <a class="fake-map" href="https://maps.app.goo.gl/eBzqEHJeNRizpAZK7" target="_blank" rel="noopener noreferrer">🗺 지도 열기</a>
+</div>
   </div>
 </section>
 
